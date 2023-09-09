@@ -41,7 +41,7 @@
 body {
     font-family: "Inter", ui-sans-serif;
     font-weight: 600;
-    background: #f2f5f7;
+    background: #fff;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -95,13 +95,12 @@ header::before {
     font-weight: 600;
     font-family: 'Inter', sans-serif;
     margin: 0;
-    color: #949ba6;
+    color: #2b323b;
     z-index: 1;
     text-decoration: none;
-    padding: 3px 6px; /* Add padding for a better visual effect on hover */
-    border-radius: 5px; /* Rounded corners */
+    padding: 3px 6px;
+    border-radius: 5px;
     transition: background-color 0.1s ease-in, color 0.1s ease-in;
-
 }
 
 .logo-link {
@@ -109,8 +108,7 @@ header::before {
 }
 
 .logo-link:hover .logo {
-    background-color: #d6e3f8;
-    color: #5c9cf5;
+    background-color: #e7ebed;
 }
 
 .menu-items {
@@ -131,12 +129,18 @@ header::before {
     padding: 2px 4px; /* Add padding for a better visual effect on hover */
     border-radius: 5px; /* Rounded corners */
     transition: background-color 0.1s ease-in, color 0.1s ease-in;
-
+}
+.logo:hover {
+    background-color: #e7ebed; /* light gray background */
 }
 
 .menu-link:hover, .github-icon:hover {
     background-color: #e7ebed; /* light gray background */
     color: #67717f; /* Black text color */
+}
+
+.menu-link:active, .github-icon:active, .logo:active {
+    background-color: #d0d4d5;
 }
 
 /* Main Content */
@@ -290,4 +294,41 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #649fff; /* A shade lighter than #5c9cf5 */
+}
+
+.lab-options {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 50%; /* Match the width of the header */
+    margin: 50px auto; /* Center the conditions on the page */
+    gap: 2%; /* Add a gap between the boxes */
+    text-decoration: none;
+}
+
+.options-box {
+    width: 49%; /* Close to half the width of its parent container, minus 2% to account for the gap */
+    font-size: 1.5em;
+    text-align: left; /* Left align text */
+    padding: 50px;
+    height: 250px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #f6f7fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s ease-in, border-color 0.1s ease-in; /* Added border-color to transitions */
+    margin-bottom: 10px; 
+    border: 2px solid #e8ecf1; /* Transparent border to maintain layout */
+    text-decoration: none;
+}
+
+.options-box:hover {
+    border-color: #dde9ff;
+    background-color: #ebf1ff;
+    transform: translateY(-2px); /* Slightly moves the box upwards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.options-box:active {
+    background-color: #dde9ff;
 }

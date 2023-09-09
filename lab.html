@@ -12,10 +12,10 @@
     <link href="/static/styles/styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body condition = "style-2">
     <header>
         <div class="header-left">
-            <a href = "index.html" class = "logo-link"><h1 class="logo">Dermalab</h1></a>
+            <a href = "../lab.html" class = "logo-link"><h1 class="logo">Dermalab</h1></a>
         </div>
         <div class="header-right">
             <nav class="menu-items">
@@ -25,16 +25,21 @@
             </nav>
         </div>
     </header>
+<body>
 
-    <main>
-        <div class="main-content-wrapper">
-            <form action="/" method="POST" enctype="multipart/form-data">
-                <input type="file" name="image_upload" accept="image/*" required>
-                <br>
-                <input type="submit" value="Upload">
-            </form>
-        </div>
-    </main>
-</body>
+        <section class="lab-options">
+            <!-- ID Box -->
+            <a href="/templates/id.html" class="options-box" data-condition="id">
+                <div class="condition-title">🔍 Condition Identification</div>
+                <div class="condition-blurb">A brief description about the resources related to Psoriasis goes here.</div>
+            </a>
+        
+            <!-- Severity Box -->
+            <a href="/templates/severity.html" class="options-box" data-condition="analysis">
+                <div class="condition-title">📊 Severity Analysis</div>
+                <div class="condition-blurb">A brief description about the resources related to Eczema goes here.</div>
+            </a>
+        </section>
+    </body>
 
 </html>

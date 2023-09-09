@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 import os
+
 from werkzeug.utils import secure_filename
 
 # Set up an upload folder within your project directory
@@ -16,7 +17,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route("/", methods=['GET', 'POST'])
-def index():
+def id():
     if request.method == 'POST':
         # check if the post request has the file part
         if 'image_upload' not in request.files:
@@ -31,4 +32,4 @@ def index():
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(filepath)
             return render_template('result.html', image_path=filepath)
-    return render_template('index.html')
+    return render_template('id.html')
