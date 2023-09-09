@@ -301,7 +301,7 @@ input[type="submit"]:hover {
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     width: 50%; /* Match the width of the header */
-    margin: 50px auto; /* Center the conditions on the page */
+    margin: 100px auto; /* Center the conditions on the page */
     gap: 2%; /* Add a gap between the boxes */
     text-decoration: none;
 }
