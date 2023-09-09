@@ -257,7 +257,7 @@ input[type="file"] {
     background-color: white;
     border: 2px solid #5c9cf5;
     border-radius: 10px;
-    padding: 30%;
+    padding: 5%;
     font-size: 1em;
     text-align: center;
     cursor: pointer;
@@ -298,37 +298,84 @@ input[type="submit"]:hover {
 
 .lab-options {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    width: 50%; /* Match the width of the header */
+    justify-content: space-between; /* Distribute the boxes evenly with space in between */
+    align-items: flex-start; /* Align the top of the boxes */
+    width: 50%; /* You can adjust this based on your requirements */
     margin: 100px auto; /* Center the conditions on the page */
     gap: 2%; /* Add a gap between the boxes */
     text-decoration: none;
 }
 
 .options-box {
-    width: 49%; /* Close to half the width of its parent container, minus 2% to account for the gap */
+    flex: 1; /* Allow boxes to grow and take equal width */
     font-size: 1.5em;
-    text-align: left; /* Left align text */
-    padding: 50px;
-    height: 250px;
+    text-align: left;
+    padding: 30px; /* Adjust padding as required */
+    height: 400px; /* A fixed height ensures all boxes are of the same height */
     border-radius: 10px;
     cursor: pointer;
     background-color: #f6f7fa;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.1s ease-in, border-color 0.1s ease-in; /* Added border-color to transitions */
+    transition: all 0.1s ease-in, border-color 0.1s ease-in;
     margin-bottom: 10px; 
-    border: 2px solid #e8ecf1; /* Transparent border to maintain layout */
+    border: 2px solid #e8ecf1;
     text-decoration: none;
 }
 
-.options-box:hover {
+.options-box[data-condition="condition"]:hover {
     border-color: #dde9ff;
     background-color: #ebf1ff;
     transform: translateY(-2px); /* Slightly moves the box upwards */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+.options-box[data-condition="condition"]:active {
+    background-color: #dde9ff;
+}
+
+.options-box[data-condition="analysis"]:hover {
+    border-color: #ffe5ed;
+    background-color: #fff2f6;
+    transform: translateY(-2px); /* Slightly moves the box upwards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.options-box[data-condition="analysis"]:active {
+    background-color: #ffe5ed;
+}
+
+.options-box[data-condition="spread"]:hover {
+    border-color: #fefae9;
+    background-color: #fefdf4;
+    transform: translateY(-2px); /* Slightly moves the box upwards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.options-box[data-condition="spread"]:active {
+    background-color: #fefae9;
+}
+
 .options-box:active {
     background-color: #dde9ff;
+}
+
+/* Image preview styling */
+.preview-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#imagePreview {
+    max-width: 100%; /* Ensures the image does not exceed the parent width */
+    height: auto; /* Maintains the image's aspect ratio */
+    margin-bottom: 10px;
+}
+
+#imageName {
+    text-align: center;
+    font-size: 1.2em;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out;
 }
