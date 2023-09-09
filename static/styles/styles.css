@@ -1,0 +1,293 @@
+/* Responsive Design - Using Flexbox and Media Queries */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    .header-left, .header-right {
+        flex-direction: column;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-content-wrapper {
+        width: 80%; /* increased width for smaller screens */
+    }
+
+    .condition-option {
+        width: calc(50% - 10px); /* Half width minus half gap for breathing room */
+        margin-right: 20px;
+    }
+}
+
+/* For mobile and smaller screens */
+@media (max-width: 480px) {
+    .main-content-wrapper {
+        width: 90%; /* further increased width for mobile screens */
+    }
+
+    .info-text {
+        font-size: 2.5em; /* reduce font size for better fit */
+    }
+    .condition-option {
+        width: 100%; 
+        margin-right: 0;
+    }
+}
+
+
+/* Global Styles */
+body {
+    font-family: "Inter", ui-sans-serif;
+    font-weight: 600;
+    background: #f2f5f7;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #414141;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+
+header {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px 0px;
+    padding-top: 20px;
+    position: relative;
+}
+
+.header-left, .header-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.header-left {
+    justify-content: flex-start;
+}
+
+.header-right {
+    justify-content: flex-end;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    height: 1.3px;
+    width: 100%;
+    background-color: #d4d8de;
+    top: 100%;
+    left: 0;
+    z-index: -1;
+}
+
+.logo {
+    font-size: 1.4em;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    color: #949ba6;
+    z-index: 1;
+    text-decoration: none;
+    padding: 3px 6px; /* Add padding for a better visual effect on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.1s ease-in, color 0.1s ease-in;
+
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-link:hover .logo {
+    background-color: #d6e3f8;
+    color: #5c9cf5;
+}
+
+.menu-items {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    z-index: 1;
+}
+
+.menu-link, .github-icon {
+    display: inline-block;
+    transition: color 0.05s ease-in-out;
+    color: #949ba6;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 2px 4px; /* Add padding for a better visual effect on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.1s ease-in, color 0.1s ease-in;
+
+}
+
+.menu-link:hover, .github-icon:hover {
+    background-color: #e7ebed; /* light gray background */
+    color: #67717f; /* Black text color */
+}
+
+/* Main Content */
+.main-content-wrapper {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.info-text {
+    max-width: 80%;
+    font-size: 4em;
+    margin-left: 0;
+    text-align: left;
+    color: #44474b;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.highlight-logo {
+    font-size: 2em;
+    background-color: #d6e3f8;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #5c9cf5;
+    margin-top: 30px;
+}
+
+.conditions {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for the flex items */
+    justify-content: space-between; /* Distributes the items evenly */
+    align-items: start;
+    width: 50%; /* Match the width of the header */
+    margin: 0 auto; /* Center the conditions on the page */
+    gap: 10px; /* Gap between each condition */
+    text-decoration: none;
+}
+
+.condition-option {
+    width: 25%;/* One-third width minus gap for breathing room */
+    font-size: 1.5em;
+    text-align: left; /* Left align text */
+    padding: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Added border-color to transitions */
+    margin-bottom: 10px; 
+    border: 2px solid transparent; /* Transparent border to maintain layout */
+    text-decoration: none;
+}
+
+.condition-option[data-condition="psoriasis"]:hover {
+    margin-top: -5px; 
+    margin-bottom: 30px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    border-color: #5c9cf5; /* Update the border color on hover */
+}
+
+.condition-option[data-condition="eczema"]:hover {
+    margin-top: -5px; 
+    margin-bottom: 30px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    border-color: #ff7ea3; /* Update the border color on hover */
+}
+
+.condition-option[data-condition="acne"]:hover {
+    margin-top: -5px; 
+    margin-bottom: 30px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    border-color: #f8e892; /* Update the border color on hover */
+}
+
+.condition-title {
+    font-size: 1.4em; /* Font size for the title */
+    margin-bottom: 10px; /* Space between title and blurb */
+    text-decoration: none;
+    color: #2c3138;
+    font-weight: 700;
+}
+
+.condition-blurb {
+    font-size: 0.9em; /* Font size for the blurb */
+    color: #44474b; /* Color for the blurb */
+    text-decoration: none;
+    font-weight: 400;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.9em;
+    background: #000;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the input[type=file] */
+input[type="file"] {
+    display: block; /* Make it a block element */
+    margin: 50px auto; /* Center it with auto margin on the sides and provide some vertical space */
+    background-color: white;
+    border: 2px solid #5c9cf5;
+    border-radius: 10px;
+    padding: 30%;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    color: #5c9cf5; /* Same color as the border for the placeholder text */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+}
+
+/* Change the default text of the file input to "Drag and drop or click to select" */
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+input[type="file"]::before {
+    content: "Drag and drop or click to select.";
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Upload Button */
+input[type="submit"] {
+    display: block;
+    margin: 10px auto; /* Center it */
+    background-color: #5c9cf5;
+    color: #fff; /* White text color */
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+    font-weight: 400;
+    cursor: pointer;
+    border: 1px;
+}
+
+input[type="submit"]:hover {
+    background-color: #649fff; /* A shade lighter than #5c9cf5 */
+}
