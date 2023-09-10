@@ -16,7 +16,7 @@
 <body>
     <header>
         <div class="header-left">
-            <a href = "../templates/index.html" class = "logo-link"><h1 class="logo">Dermalab</h1></a>
+            <a href = "http://127.0.0.1:3000/index.html" class = "logo-link"><h1 class="logo">Dermalab</h1></a>
         </div>
         <div class="header-right">
             <nav class="menu-items">
@@ -33,34 +33,17 @@
             {% for condition, percentage in results %}
                 <li>{{ condition }}: {{ percentage|round(2) }}% match</li>
             {% endfor %}
-            </ul></p>
+            </ul> <br>
+
+            <h3>Additional Information:</h3>
+{% for result in metaphor_results %}
+    <p><a href="{{ result.url }}">{{ result.title }}</a> (Published: {{ result.published_date }})</p>
+{% endfor %}
+        
+        </p>
 
         </section></section>
-    </body>
-    <footer>
-        <div class="disclaimer-toggle">
-            <span id="disclaimer-header">Disclaimer <i class="fa fa-chevron-down" id="disclaimer-chevron"></i></span>
-            <div id="disclaimer-content" style="display: none;">
-                The information and results provided by Dermalab are for informational purposes only and are not intended as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or another qualified health provider with any questions you may have regarding a medical condition. Do not disregard professional medical advice or delay in seeking it because of something you have read or interpreted on this website. Use of this website and its services does not establish a doctor-patient relationship. Dermalab is not responsible for any decisions or actions taken based on the information provided herein.
-            </div>
-        </div>
-    
-        <script>
-            document.getElementById("disclaimer-header").addEventListener("click", function() {
-                var content = document.getElementById("disclaimer-content");
-                var chevron = document.getElementById("disclaimer-chevron");
-                var toggleDiv = document.querySelector(".disclaimer-toggle");
-                if (content.style.display === "none") {
-                    content.style.display = "block";
-                    toggleDiv.classList.add("expanded");
-                    chevron.className = "fa fa-chevron-up";
-                } else {
-                    content.style.display = "none";
-                    toggleDiv.classList.remove("expanded");
-                    chevron.className = "fa fa-chevron-down";
-                }
-            });
-        </script>
-    </footer>
 
+        
+    </body>
 </html>

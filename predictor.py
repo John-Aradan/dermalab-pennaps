@@ -49,3 +49,6 @@ def predict_images(image_paths):
     # Analyze and return results
     ranked_results = results_analysis(predictions)
     return ranked_results
+
+def get_highest_ranking_result(ranked_results):
+    return ranked_results[0][0]

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Analysis - Dermalab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="/static/styles/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-left">
+        <a href = "../index.html" class = "logo-link"><h1 class="logo">Dermalab</h1></a>
+    </div>
+    <div class="header-right">
+        <nav class="menu-items">
+            <a href="https://github.com/vishruthb/dermalab" target="_blank" class="github-icon"><i class="fab fa-github"></i></a>
+        </nav>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <div class="main-content-wrapper">
+
+        <!-- IMAGE 1 -->
+        <div class="image-section">
+            <img src="/static/assets/1-normal.jpg" alt="Description for Image 1">
+            <p>Original Image: The user provides an input image, which contains the lesion or disease region in skin which needs to be analyzed.</p>
+        </div>
+
+        <!-- IMAGE 2 -->
+        <div class="image-section">
+            <img src="/static/assets/1-binary.png" alt="Description for Image 2">
+            <p>Binary Segmentation: The image provided by the user in run through deep learning transfer learning model. In this case, its run through InceptionResNet50 transfer learning model, which has been pretrained on ImageNet dataset.</p>
+        </div>
+
+        <!-- IMAGE 3 -->
+        <div class="image-section">
+            <img src="/static/assets/2-onion.jpg" alt="Description for Image 3">
+            <p>Onion Ring Segmentations: Once the binary segmentation of disease has been generated, the image along with the mask is run in MatLab. Where the mask undergoes erosion and dilation of 10 pixels, the diff is generated to create an onion ring. This process is repeated until the number of pixels is = 0.</p>
+        </div>
+
+        <!-- IMAGE 4 -->
+        <div class="image-section">
+            <img src="/static/assets/3-onion.jpg" alt="Description for Image 4">
+        </div>
+
+        <!-- IMAGE 5 -->
+        <div class="image-section">
+            <img src="/static/assets/4-onion.jpg" alt="Description for Image 5">
+        </div>
+
+        <!-- IMAGE 6 -->
+        <div class="image-section">
+            <img src="/static/assets/5-onion.jpg" alt="Description for Image 6">
+        </div>
+
+        <!-- IMAGE 7 -->
+        <div class="image-section">
+            <img src="/static/assets/6-onion.jpg" alt="Description for Image 7">
+        </div>
+
+    </div>
+</main>
+
+
+
+<script src="/static/scripts/scripts.js"></script>
+</body>
+
+</html>
