@@ -1,4 +1,4 @@
-# ML-Powered Diagnostic Insights
+# ML-Powered Medical Diagnostic Insights
 
 Dermalab -  Your trusted partner for skin diagnosis, leveraging AI, ML, deep learning, and LLMs for precise evaluations, comprehensive insights, and compelling doctor-patient relationships. 
 
