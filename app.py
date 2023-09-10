@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from RF_crossval_Siverence_Test import get_siverence
+from rf_crossval_severness import get_severeness
 
 app = Flask(__name__)
 
@@ -65,7 +65,7 @@ def result():
             data[key] = int(value)
 
         # Get prediction using the model
-        pred = get_siverence(data)
+        pred = get_severeness(data)
 
         return render_template('result.html', prediction=pred[0])
     return redirect(url_for('severity.html'))
