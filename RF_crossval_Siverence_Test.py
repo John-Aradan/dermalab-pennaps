@@ -59,6 +59,7 @@ def initialize_model():
     print("Confusion Matrix: \n", avg_confusion_matrix)
     print("Average Accuracy:", avg(acc_avg))
     
+    '''
     # 6. Plot the result
     classes=np.unique(Y)
     plt.imshow(avg_confusion_matrix, interpolation='nearest', cmap=plt.cm.Blues)
@@ -78,7 +79,7 @@ def initialize_model():
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
     plt.show()
-
+    '''
     return model
 
 def get_siverence(Dict):

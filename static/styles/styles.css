@@ -51,6 +51,29 @@ body {
     min-height: 100vh;
 }
 
+/* Button */
+.base-button {
+    display: block;
+    margin: 10px auto; /* Center it */
+    background-color: #ff7ea3;
+    color: #fff; /* White text color */
+    padding: 5px 1px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px;
+    text-decoration: none;
+    text-align: center;
+    width: 5em;
+    transition: background-color 0.1s ease-in;
+}
+
+.base-button:hover {
+    background-color: #ff9ab0; /* A shade lighter than #5c9cf5 */
+}
+
 /* Header */
 
 header {
@@ -158,6 +181,15 @@ header::before {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     line-height: 1.4;
+}
+
+.call-to {
+    font-size: 2em;
+    background-color: #d6e3f8;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #5c9cf5;
+    margin-top: 30px;
 }
 
 .highlight-logo {
@@ -286,8 +318,8 @@ input[type="submit"] {
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
-    font-size: 1em;
-    font-weight: 400;
+    font-size: 1.1em;
+    font-weight: 600;
     cursor: pointer;
     border: 1px;
 }

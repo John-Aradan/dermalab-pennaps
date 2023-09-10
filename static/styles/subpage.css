@@ -1,0 +1,116 @@
+/* Form Styles */
+
+form {
+    width: auto;
+    margin: 50px auto;
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f6f7fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 2px solid #ffe5ed;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+legend {
+    font-weight: 600;
+    color: #ff7ea3;
+}
+
+input[type="text"], input[type="email"], textarea, select {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ffe5ed;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Inter', sans-serif;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ff7ea3;
+    font-weight: 600;
+}
+
+.help-tooltip {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff7ea3;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.help-tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #ff7ea3;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+input[type="submit"] {
+    background-color: #ff7ea3;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff9ab0;
+}
+
+/* Global Styles for the Form Questions */
+.condition-questions {
+    display: flex;
+    flex-direction: column;
+}
+
+.condition-questions > div {
+    margin-bottom: 15px;
+}
+
+/* Style for input fields */
+.condition-questions input[type="number"] {
+    border-radius: 0.4em;
+    background-color: #ecedf0;
+    color: #828488;
+    border: 2px solid transparent; /* Initially transparent border */
+    padding: 8px 12px;
+    margin-left: 10px;
+}
+
+/* Change styles when an input field is selected/focused */
+.condition-questions input[type="number"]:focus {
+    outline: none;
+    border-color: #5c9cf5;
+}
+
+/* Placeholder color for the input fields */
+.condition-questions input[type="number"]::placeholder {
+    color: #828488;
+}

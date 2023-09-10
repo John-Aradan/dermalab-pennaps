@@ -1,8 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
+from RF_crossval_Siverence_Test import get_siverence
 
 app = Flask(__name__)
-
-import os
 
 from werkzeug.utils import secure_filename
 
@@ -16,20 +15,60 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route("/", methods=['GET', 'POST'])
-def id():
+@app.route('/')
+def index():
+    return render_template('severity.html')
+
+@app.route('/result', methods=['POST'])
+def result():
     if request.method == 'POST':
-        # check if the post request has the file part
-        if 'image_upload' not in request.files:
-            return "No file part"
-        file = request.files['image_upload']
-        # if user does not select file, browser also
-        # submit an empty part without filename
-        if file.filename == '':
-            return "No selected file"
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            file.save(filepath)
-            return render_template('result.html', image_path=filepath)
-    return render_template('id.html')
+        # Extract the data from the form into the dictionary
+        data = {
+            'erythema': request.form['erythema'],
+            'scaling': request.form['scaling'],
+            'definite_borders': request.form['definite_borders'],
+            'itching': request.form['itching'],
+            'koebner_phenomenon': request.form['koebner_phenomenon'],
+            'polygonal_papules': request.form['polygonal_papules'],
+            'follicular_papules': request.form['follicular_papules'],
+            'oral_mucosal_involvement': request.form['oral_mucosal_involvement'],
+            'knee_and_elbow_involvement': request.form['knee_and_elbow_involvement'],
+            'scalp_involvement': request.form['scalp_involvement'],
+            'family_history': request.form['family_history'],
+            'melanin_incontinence': request.form['melanin_incontinence'],
+            'eosinophils_infiltrate': request.form['eosinophils_infiltrate'],
+            'PNL_infiltrate': request.form['PNL_infiltrate'],
+            'fibrosis_papillary_dermis': request.form['fibrosis_papillary_dermis'],
+            'exocytosis': request.form['exocytosis'],
+            'acanthosis': request.form['acanthosis'],
+            'hyperkeratosis': request.form['hyperkeratosis'],
+            'parakeratosis': request.form['parakeratosis'],
+            'clubbing_rete_ridges': request.form['clubbing_rete_ridges'],
+            'elongation_rete_ridges': request.form['elongation_rete_ridges'],
+            'thinning_suprapapillary_epidermis': request.form['thinning_suprapapillary_epidermis'],
+            'spongiform_pustule': request.form['spongiform_pustule'],
+            'munro_microabcess': request.form['munro_microabcess'],
+            'focal_hypergranulosis': request.form['focal_hypergranulosis'],
+            'disappearance_granular_layer': request.form['disappearance_granular_layer'],
+            'vacuolisation_damage_basal_layer': request.form['vacuolisation_damage_basal_layer'],
+            'spongiosis': request.form['spongiosis'],
+            'saw_tooth_appearance_retes': request.form['saw_tooth_appearance_retes'],
+            'follicular_horn_plug': request.form['follicular_horn_plug'],
+            'perifollicular_parakeratosis': request.form['perifollicular_parakeratosis'],
+            'inflammatory_mononuclear_infiltrate': request.form['inflammatory_mononuclear_infiltrate'],
+            'band_like_infiltrate': request.form['band_like_infiltrate'],
+            'age': request.form['age']
+        }
+        
+        # Convert string inputs to integers
+        for key, value in data.items():
+            data[key] = int(value)
+
+        # Get prediction using the model
+        pred = get_siverence(data)
+
+        return render_template('result.html', prediction=pred[0])
+    return redirect(url_for('severity.html'))
+
+if __name__ == '__main__':
+    app.run(debug=True)

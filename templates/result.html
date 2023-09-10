@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dermalab</title>
+    <title>Algo Results - Dermalab</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="static/styles/styles.css" rel="stylesheet">
+    <link href="/static/styles/styles.css" rel="stylesheet">
+    <link href="/static/styles/subpage.css" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="header-left">
-            <a href = "../lab.html" class = "logo-link"><h1 class="logo">Dermalab</h1></a>
+            <a href = "../index.html" class = "logo-link"><h1 class="logo">Dermalab</h1></a>
         </div>
         <div class="header-right">
             <nav class="menu-items">
@@ -26,12 +27,13 @@
         </div>
     </header>
 
-    <main>
-        <div class="main-content-wrapper">
-            <h1 class = "highlight-logo">Uploaded Image:</h1>
-            <img src="{{ image_path }}" alt="Uploaded Image" style="max-width: 100%;">
-        </div>
-    </main>
+    <body>
+        <section class="main-content-wrapper">
+            <h2 class="call-to">Results</h2>
+        <h3>Predicted value: {{ prediction }}</h3>
+        <a class = "base-button" href="{{ url_for('index') }}">Return <i class="fa fa-chevron-right"></i>
+        </a>
+    </body>
 
     <script src="../assets/scripts/script.js"></script>
 </body>

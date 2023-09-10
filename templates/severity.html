@@ -4,66 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dermalab</title>
+    <title>Analysis - Dermalabs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="/static/styles/styles.css" rel="stylesheet">
+    <link href="/static/styles/subpage.css" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="header-left">
-            <a href = "../index.html" class = "logo-link"><h1 class="logo">Dermahub</h1></a>
+            <a href = "../index.html" class = "logo-link"><h1 class="logo">Dermalab</h1></a>
         </div>
         <div class="header-right">
             <nav class="menu-items">
                 <a href="#" class="menu-link">About</a>
                 <a href="#" class="menu-link">Contribute</a>
-                <a href="#" class="github-icon"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/vishruthb/dermalab" target="_blank" class="github-icon"><i class="fab fa-github"></i></a>
             </nav>
         </div>
     </header>
 
-    <main>
-
-        <div class="main-content-wrapper">
-            <form action="/" method="POST" enctype="multipart/form-data">
-                
-                <input type="file" id="imageUpload" name="image_upload" accept="image/*" required onchange="previewImage();">
-                <div class="preview-area">
-                    <img id="imagePreview" src="" alt="Preview" style="display: none;">
-                    <p id="imageName"></p>
-                </div>
-                <br>
-                <input type="submit" value="Upload">
-            </form>
-        </div>        
-    </main>
-    <script>
-        function previewImage() {
-            const file = document.getElementById("imageUpload").files[0];
-            const preview = document.getElementById("imagePreview");
-            const imageName = document.getElementById("imageName");
-    
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    preview.src = event.target.result;
-                    preview.style.display = "block";
-                    imageName.textContent = file.name;
-                    // Animation effect
-                    imageName.style.opacity = "0";
-                    imageName.animate([{ opacity: "0" }, { opacity: "1" }], {
-                        duration: 1000,
-                        fill: "forwards"
-                    });
-                }
-                reader.readAsDataURL(file);
-            }
-        }
-    </script>
+    <section class="main-content-wrapper">
+        <h2 class="call-to">Condition Severity Algorithm</h2>
+        
+        <form action="/result" method="post" class="conditions">
+            <!-- Wrap each input field in a div for more control -->
+            
+            <div class="condition-questions">
+                Age: <input type="number" name="age" required>
+                Erythema (0-3): <input type="number" name="erythema" min="0" max="3" required>
+                Scaling (0-3): <input type="number" name="scaling" min="0" max="3" required>
+                Definite Borders (0-3): <input type="number" name="definite_borders" min="0" max="3" required>
+                Itching (0-3): <input type="number" name="itching" min="0" max="3" required>
+                Koebner Phenomenon (0-3): <input type="number" name="koebner_phenomenon" min="0" max="3" required>
+                Polygonal Papules (0-3): <input type="number" name="polygonal_papules" min="0" max="3" required>
+                Follicular Papules (0-3): <input type="number" name="follicular_papules" min="0" max="3" required>
+                Oral Mucosal Involvement (0-3): <input type="number" name="oral_mucosal_involvement" min="0" max="3" required>
+                Knee and Elbow Involvement (0-3): <input type="number" name="knee_and_elbow_involvement" min="0" max="3" required>
+                Scalp Involvement (0-3): <input type="number" name="scalp_involvement" min="0" max="3" required>
+                Family History (0-1): <input type="number" name="family_history" min="0" max="1" required>
+                Melanin Incontinence (0-3): <input type="number" name="melanin_incontinence" min="0" max="3" required>
+                Eosinophils Infiltrate (0-3): <input type="number" name="eosinophils_infiltrate" min="0" max="3" required>
+                PNL Infiltrate (0-3): <input type="number" name="PNL_infiltrate" min="0" max="3" required>
+                Fibrosis Papillary Dermis (0-3): <input type="number" name="fibrosis_papillary_dermis" min="0" max="3" required>
+                Exocytosis (0-3): <input type="number" name="exocytosis" min="0" max="3" required>
+                Acanthosis (0-3): <input type="number" name="acanthosis" min="0" max="3" required>
+                Hyperkeratosis (0-3): <input type="number" name="hyperkeratosis" min="0" max="3" required>
+                Parakeratosis (0-3): <input type="number" name="parakeratosis" min="0" max="3" required>
+                Clubbing Rete Ridges (0-3): <input type="number" name="clubbing_rete_ridges" min="0" max="3" required>
+                Elongation Rete Ridges (0-3): <input type="number" name="elongation_rete_ridges" min="0" max="3" required>
+                Thinning Suprapapillary Epidermis (0-3): <input type="number" name="thinning_suprapapillary_epidermis" min="0" max="3" required>
+                Spongiform Pustule (0-3): <input type="number" name="spongiform_pustule" min="0" max="3" required>
+                Munro Microabcess (0-3): <input type="number" name="munro_microabcess" min="0" max="3" required>
+                Focal Hypergranulosis (0-3): <input type="number" name="focal_hypergranulosis" min="0" max="3" required>
+                Disappearance Granular Layer (0-3): <input type="number" name="disappearance_granular_layer" min="0" max="3" required>
+                Vacuolisation Damage Basal Layer (0-3): <input type="number" name="vacuolisation_damage_basal_layer" min="0" max="3" required>
+                Spongiosis (0-3): <input type="number" name="spongiosis" min="0" max="3" required>
+                Saw Tooth Appearance Retes (0-3): <input type="number" name="saw_tooth_appearance_retes" min="0" max="3" required>
+                Follicular Horn Plug (0-3): <input type="number" name="follicular_horn_plug" min="0" max="3" required>
+                Perifollicular Parakeratosis (0-3): <input type="number" name="perifollicular_parakeratosis" min="0" max="3" required>
+                Inflammatory Mononuclear Infiltrate (0-3): <input type="number" name="inflammatory_mononuclear_infiltrate" min="0" max="3" required>
+                Band Like Infiltrate (0-3): <input type="number" name="band_like_infiltrate" min="0" max="3" required>
+                <input type="submit" value="Predict">
+            </div>
+        </form>
+    </section>
 </body>
 
 </html>
