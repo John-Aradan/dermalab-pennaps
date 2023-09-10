@@ -10,63 +10,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="/static/styles/styles.css" rel="stylesheet">
+    <link href="/static/scripts/scripts.js" rel="script">
 </head>
 
-<body>
+<body condition = "style-2">
     <header>
         <div class="header-left">
             <a href = "../index.html" class = "logo-link"><h1 class="logo">Dermalab</h1></a>
         </div>
         <div class="header-right">
             <nav class="menu-items">
-                <a href="#" class="menu-link">About</a>
-                <a href="#" class="menu-link">Contribute</a>
-                <a href="#" class="github-icon"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/vishruthb/dermalab" target="_blank" class="github-icon"><i class="fab fa-github"></i></a>
             </nav>
         </div>
     </header>
+<body>
 
-    <main>
+        <section class="lab-options">
+            <!-- ID Box -->
+            <a href="/templates/imaging.html" class="options-box" data-condition="condition">
+                <div class="condition-title">🔍 Condition</div>
+                <div class="condition-blurb">Upload an image and instantly gain insights with an informal diagnosis of potential skin conditions.</div>
+            </a>
+        
+            <!-- Severity Box -->
+            <a href="/templates/severity.html" class="options-box" data-condition="analysis">
+                <div class="condition-title">📊 Analysis</div>
+                <div class="condition-blurb">Answer a series of medical questions to receive a tailored analysis of your skin condition's severity and personalized care recommendations.</div>
+            </a>
 
-        <div class="main-content-wrapper">
-            <form action="/" method="POST" enctype="multipart/form-data">
-                
-                <input type="file" id="imageUpload" name="image_upload" accept="image/*" required onchange="previewImage();">
-                <div class="preview-area">
-                    <img id="imagePreview" src="" alt="Preview" style="display: none;">
-                    <p id="imageName"></p>
-                </div>
-                <br>
-                <input type="submit" value="Upload">
-            </form>
-        </div>        
-    </main>
-    <script>
-        function previewImage() {
-            const file = document.getElementById("imageUpload").files[0];
-            const preview = document.getElementById("imagePreview");
-            const imageName = document.getElementById("imageName");
-    
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    preview.src = event.target.result;
-                    preview.style.display = "block";
-                    imageName.textContent = file.name;
-                    // Animation effect
-                    imageName.style.opacity = "0";
-                    imageName.animate([{ opacity: "0" }, { opacity: "1" }], {
-                        duration: 1000,
-                        fill: "forwards"
-                    });
-                }
-                reader.readAsDataURL(file);
-            }
-        }
-    </script>
-</body>
-
-<footer>
+            <!-- Spread -->
+            <a href="/templates/severity.html" class="options-box" data-condition="spread">
+                <div class="condition-title">🕸 Spread</div>
+                <div class="condition-blurb">Explore the global spread and prevalence of various conditions.</div>
+            </a>
+        </section>
+    </body>
+    <footer>
     <div class="disclaimer-toggle">
         <span id="disclaimer-header">Disclaimer <i class="fa fa-chevron-down" id="disclaimer-chevron"></i></span>
         <div id="disclaimer-content" style="display: none;">
@@ -91,5 +71,4 @@
         });
     </script>
 </footer>
-
 </html>

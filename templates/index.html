@@ -10,45 +10,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="/static/styles/styles.css" rel="stylesheet">
-    <link href="/static/scripts/scripts.js" rel="script">
 </head>
 
-<body condition = "style-2">
+<body>
     <header>
         <div class="header-left">
-            <a href = "../index.html" class = "logo-link"><h1 class="logo">Dermalab</h1></a>
+            <a href = "../templates/index.html" class = "logo-link"><h1 class="logo">Dermalab</h1></a>
         </div>
         <div class="header-right">
             <nav class="menu-items">
-                <a href="#" class="menu-link">About</a>
-                <a href="#" class="menu-link">Contribute</a>
                 <a href="https://github.com/vishruthb/dermalab" target="_blank" class="github-icon"><i class="fab fa-github"></i></a>
             </nav>
         </div>
     </header>
-<body>
 
-        <section class="lab-options">
-            <!-- ID Box -->
-            <a href="/templates/imaging.html" class="options-box" data-condition="condition">
-                <div class="condition-title">🔍 Condition</div>
-                <div class="condition-blurb">Upload an image and instantly gain insights with an informal diagnosis of potential skin conditions.</div>
-            </a>
-        
-            <!-- Severity Box -->
-            <a href="/templates/severity.html" class="options-box" data-condition="analysis">
-                <div class="condition-title">📊 Analysis</div>
-                <div class="condition-blurb">Answer a series of medical questions to receive a tailored analysis of your skin condition's severity and personalized care recommendations.</div>
-            </a>
+    <main>
 
-            <!-- Spread -->
-            <a href="/templates/severity.html" class="options-box" data-condition="spread">
-                <div class="condition-title">🕸 Spread</div>
-                <div class="condition-blurb">Explore the global spread and prevalence of various conditions.</div>
-            </a>
-        </section>
-    </body>
-    <footer>
+        <div class="main-content-wrapper">
+            <form action="/" method="post" enctype="multipart/form-data" class="upload-form">
+                <div class="file-upload-wrapper">
+                    <input type="file" name="file[]" id="file-upload" multiple>
+                    <label for="file-upload"></label>
+                </div>
+                <div id="uploaded-files">
+                    <!-- Your uploaded files will be displayed here -->
+                </div>
+                <button type="submit" class="upload-btn">Upload and Analyze <i class="fa fa-chevron-right"></i></button>
+            </form> 
+    </main>
+    <script src="/static/scripts/scripts.js"></script>
+</body>
+
+<footer>
     <div class="disclaimer-toggle">
         <span id="disclaimer-header">Disclaimer <i class="fa fa-chevron-down" id="disclaimer-chevron"></i></span>
         <div id="disclaimer-content" style="display: none;">
@@ -73,4 +66,5 @@
         });
     </script>
 </footer>
+
 </html>

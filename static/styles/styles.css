@@ -345,17 +345,17 @@ footer a:hover {
 
 /* Style for the input[type=file] */
 input[type="file"] {
-    display: block; /* Make it a block element */
-    margin: 50px auto; /* Center it with auto margin on the sides and provide some vertical space */
+    margin: 50px auto;
     background-color: white;
     border: 2px solid #5c9cf5;
     border-radius: 10px;
-    padding: 5%;
-    font-size: 1em;
+    padding: 2%; 
+    font-size: 1.2em;
     text-align: center;
     cursor: pointer;
-    color: #5c9cf5; /* Same color as the border for the placeholder text */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+    color: #5c9cf5;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    width: 80%;
 }
 
 /* Change the default text of the file input to "Drag and drop or click to select" */
@@ -471,4 +471,51 @@ input[type="submit"]:hover {
     font-size: 1.2em;
     opacity: 0; /* Initially hidden */
     transition: opacity 0.5s ease-in-out;
+}
+
+.file-list {
+    margin-top: 20px;
+    text-align: center; 
+    font-size: 1.1em;
+}
+
+.file-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+
+.checkmark {
+    color: #00897B; /* Green color for the checkmark */
+    margin-left: 10px;
+}
+
+/* Upload Button */
+.upload-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #5c9cf5;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid #5c9cf5;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.upload-btn:hover {
+    background-color: #649fff;
+}
+
+.upload-btn:active {
+    border-color: #3d7fd3;
+    background-color: #3d7fd3;
 }
