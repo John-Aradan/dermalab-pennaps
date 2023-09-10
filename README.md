@@ -1,4 +1,4 @@
-# Dermalab ~ The Diagnostic Assistant for Dermatology
+# Dermalab ~ ML-Powered Diagnostic Insights
 
 Dermalab -  Your trusted partner for skin diagnosis, leveraging AI, ML, deep learning, and LLMs for precise evaluations, comprehensive insights, and compelling doctor-patient relationships. 
 
