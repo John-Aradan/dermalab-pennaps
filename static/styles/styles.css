@@ -54,10 +54,11 @@ body {
 /* Button */
 .base-button {
     display: block;
-    margin: 10px auto; /* Center it */
+    margin-top: 3em;
+    margin-bottom: 3em;
     background-color: #ff7ea3;
     color: #fff; /* White text color */
-    padding: 5px 1px;
+    padding: 7px 3px;
     border-radius: 10px;
     border: none;
     font-size: 1.1em;
@@ -66,12 +67,50 @@ body {
     border: 1px;
     text-decoration: none;
     text-align: center;
-    width: 5em;
+    width: 12em;
     transition: background-color 0.1s ease-in;
 }
 
 .base-button:hover {
     background-color: #ff9ab0; /* A shade lighter than #5c9cf5 */
+}
+
+/* h3 */
+h3 {
+    font-size: 1.3em;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    color: #2c3138;
+    font-family: "Inter", ui-sans-serif;
+}
+
+.pred {
+    background-color: #fefae9;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 800;
+}
+
+p {
+    font-weight: 400;
+}
+
+.base-link {
+    color: #5c9cf5; /* You can adjust the link color if needed */
+    text-decoration: none;
+    transition: background-color 0.2s ease-in;
+    padding: 2px 4px;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+.base-link:hover {
+    background-color: #d6e3f8;
+}
+
+.resources-list {
+    margin-top: 5px;
 }
 
 /* Header */
@@ -266,11 +305,33 @@ header::before {
 /* Footer */
 footer {
     margin-top: auto;
-    padding: 15px 0;
-    text-align: center;
+    position: relative;
+}
+
+.disclaimer-toggle {
+    background-color: #ffe8ee;
+    border: 2px solid #ffe8ee;
+    padding: 7px 5px;
     font-size: 0.9em;
-    background: #000;
-    color: #fff;
+    text-align: center;
+    margin-top: -5em;
+    cursor: pointer;
+    width: 200px;  /* Initial width */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);  /* Center the disclaimer on the footer */
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px
+}
+
+#disclaimer-header {
+    font-weight: 600;
+}
+
+.expanded {
+    width: 50%;  /* Width when expanded to match the header */
+    left: 50%;
+    margin-bottom: 5em;
 }
 
 footer a {

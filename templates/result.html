@@ -30,11 +30,48 @@
     <body>
         <section class="main-content-wrapper">
             <h2 class="call-to">Results</h2>
-        <h3>Predicted value: {{ prediction }}</h3>
-        <a class = "base-button" href="{{ url_for('index') }}">Return <i class="fa fa-chevron-right"></i>
-        </a>
-    </body>
+        <h3>Predicted Level of Severity: <span class = "pred">{{ prediction }}</span></h3>
 
+        <section class="results-documentation">
+            <h2>Understanding Your Results:</h2>
+            <!-- Severity Level 5 -->
+            <div class="severity-level" id="level5">
+                <h3>Severity Level 5 (Best):</h3>
+                <p>Your skin is in its healthiest state with little to no signs of any erythemato-squamous diseases. Continue your regular skincare routine and maintain a healthy lifestyle.</p>
+            </div>
+            <!-- Severity Level 4 -->
+            <div class="severity-level" id="level4">
+                <h3>Severity Level 4:</h3>
+                <p>Minor signs of skin conditions detected. Regular skincare and monitoring are advised. If symptoms persist, consider a dermatological consultation.</p>
+            </div>
+            <!-- Severity Level 3 -->
+            <div class="severity-level" id="level3">
+                <h3>Severity Level 3:</h3>
+                <p>Potential signs of early-stage erythemato-squamous diseases identified. It's advisable to consult with a dermatologist for further insights and recommendations.</p>
+            </div>
+            <!-- Severity Level 2 -->
+            <div class="severity-level" id="level2">
+                <h3>Severity Level 2:</h3>
+                <p>Significant presence of symptoms related to erythemato-squamous diseases detected. Immediate medical attention and dermatological consultation are advised.</p>
+            </div>
+            <!-- Severity Level 1 -->
+            <div class="severity-level" id="level1">
+                <h3>Severity Level 1 (Worst):</h3>
+                <p>Critical state of the skin condition detected, with evident symptoms of one or more erythemato-squamous diseases. Seek medical attention immediately.</p>
+            </div>
+        
+            <h2>Further Resources</h2>
+            <ul class="resources-list">
+                <li><a class = "base-link" href="https://www.aad.org/">American Association of Dermatology</a></li>
+                <li><a class = "base-link" href="https://www.nytimes.com/guides/tmagazine/skincare-routine">Skincare Guidelines</a></li>
+                <li><a class = "base-link" href="https://www.medicalnewstoday.com/categories/dermatology">How to Build a Skin Care Routine</a></li>
+            </ul>
+            
+            <a class = "base-button" href="{{ url_for('index') }}">Restart Process <i class="fa fa-chevron-right"></i>
+            </a>
+
+        </section></section>
+    </body>
     <script src="../assets/scripts/script.js"></script>
 </body>
 
