@@ -4,7 +4,6 @@ Dermalab -  Your trusted partner for skin diagnosis, leveraging AI, ML, deep lea
 
 Dermalab helps avoid in skin disease misdiagosis via real-time skin condition classification, disease severity calculation, and spread predictions using cutting-edge technology. We've consolidated all of our amazing features on a website that anybody can use!
 
-Check it out [here](https://github.com/vishruthb/dermalab)!
 
 # Usage
 
